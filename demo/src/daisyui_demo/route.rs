@@ -7,7 +7,7 @@ use demo_components::daisyui::{
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-fn switch(route: &DaisyRoute) -> Html {
+fn switch(route: DaisyRoute) -> Html {
     match route {
         DaisyRoute::Button => html! {<button::Demo />},
         DaisyRoute::Drawer => html! {<drawer::Demo />},
@@ -176,7 +176,7 @@ pub fn route() -> Html {
                         </div>
                      </div>
                         <div class="w-4/5">
-                        <Switch<DaisyRoute> render={Switch::render(switch)} />
+                        <Switch<DaisyRoute> render={switch} />
                         </div>
             </div>
         </div>

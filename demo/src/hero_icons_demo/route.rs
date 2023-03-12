@@ -3,7 +3,7 @@ use demo_components::hero_icons::{outlined, solid};
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-fn switch(route: &HeroIconsRoute) -> Html {
+fn switch(route: HeroIconsRoute) -> Html {
     match route {
         HeroIconsRoute::OutLined => html! {<outlined::Demos />},
         HeroIconsRoute::Solid => html! {<solid::Demo />},
@@ -19,7 +19,7 @@ pub fn route() -> Html {
 
             </div>
             <div>
-                <Switch<HeroIconsRoute> render={Switch::render(switch)} />
+                <Switch<HeroIconsRoute> render={switch} />
             </div>
         </div>
     }

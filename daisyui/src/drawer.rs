@@ -52,7 +52,7 @@ pub struct DrawerSideProps {
 #[function_component(DrawerSide)]
 pub fn drawer_side(props: &DrawerSideProps) -> Html {
     html! {
-        <div class = {classes!("drawer-side",props.class.clone())}>
+        <div class = {classes!("drawer-side", props.class.clone(),)}>
         { for props.children.iter() }
         </div>
 

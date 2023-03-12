@@ -82,7 +82,7 @@ pub enum HeroIconsRoute {
     Solid,
 }
 
-fn switch(route: &Route) -> Html {
+fn switch(route: Route) -> Html {
     match route {
         Route::Home => html! {
             <home::Route />
@@ -99,9 +99,12 @@ fn switch(route: &Route) -> Html {
 #[function_component(App)]
 pub fn app() -> Html {
     html! {
-        <HashRouter>
-            <Switch<Route> render={Switch::render(switch)} />
-        </HashRouter>
+        // <HashRouter>
+        //     <Switch<Route> render={switch} />
+        // </HashRouter>
+        <BrowserRouter>
+            <Switch<Route> render={switch} />
+        </BrowserRouter>
     }
 }
 
